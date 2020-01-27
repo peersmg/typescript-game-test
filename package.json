@@ -1,0 +1,26 @@
+{
+  "name": "test-proj",
+  "version": "1.0.0",
+  "description": "First test proj",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "@babel/plugin-proposal-class-properties": "^7.8.3",
+    "typescript": "^3.7.5"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.8.3",
+    "@babel/core": "^7.8.3",
+    "@babel/preset-env": "^7.8.3",
+    "@babel/preset-typescript": "^7.8.3"
+  },
+  "scripts": {
+    "type-check": "tsc --noEmit",
+    "type-check:watch": "npm run type-check -- --watch",
+    "build:clean": "npm run build:remove && npm run build:js",
+    "build": "npm run build:js",
+    "build:remove": "del /s .\\build\\game /q",
+    "build:types": "tsc --emitDeclarationOnly",
+    "build:js": "babel src --out-dir build/game --extensions \".ts,.tsx\" --source-maps inline"
+  }
+}
