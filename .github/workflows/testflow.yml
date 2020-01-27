@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Yarn CLI
-      uses: CultureHQ/actions-yarn@v1.0.1
+    - uses: actions/checkout@v1
+    - uses: borales/actions-yarn@v2.0.0
       with:
-        cmd: build:clean
+        cmd: build:clean # will run `yarn install` command
